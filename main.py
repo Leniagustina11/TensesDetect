@@ -4,6 +4,8 @@ from typing import Optional
 import re
 import requests
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+
 
 app = FastAPI()
 
@@ -13,6 +15,11 @@ def root():
         "status": "ok",
         "message": "TensesDetect API is running 🚀"
     }
+
+@app.get("/app", response_class=HTMLResponse)
+def app_page():
+    with open("index.html", "r", encoding="utf-8") as f:
+        return f.read()
 
 
 app.add_middleware(
