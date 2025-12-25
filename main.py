@@ -7,9 +7,17 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "TensesDetect API is running 🚀"
+    }
+
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Atau spesifik: ["http://localhost:3000"]
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
