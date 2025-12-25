@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenseBuddy - Deteksi Tense</title>
+  <link rel="stylesheet" href="css/detect.css" />
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="navbar-brand"><a href="index.html">TenseBuddy</a></div>
+  <ul class="navbar-links">
+    <li><a href="present.html">Present Tense</a></li>
+    <li><a href="past.html">Past Tense</a></li>
+    <li><a href="future.html">Future Tense</a></li>
+    <li><a href="past_future.html">Past Future Tense</a></li>
+  </ul>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="wrapper">
+  <section class="input-panel">
+    <h1>🧠 Deteksi Tense Kalimatmu</h1>
+    <textarea id="inputSentence" placeholder="Masukkan kalimat di sini..."></textarea>
+    <button id="detectBtn">Deteksi Tense</button>
+  </section>
+
+  <aside class="result-panel" id="resultPanel">
+    <button id="closeResult">✕</button>
+    <div id="result"></div>
+  </aside>
+</div>
+
+<!-- ===== IRREGULAR VERB SECTION ===== -->
+<section class="irregular-section">
+  <h2>📚 Irregular Verb</h2>
+
+  <input
+    type="text"
+    id="verbSearch"
+    placeholder="Cari verb (go, went, gone)..."
+    class="verb-search"
+  />
+
+  <table class="verb-table">
+    <thead>
+      <tr>
+        <th>Base</th>
+        <th>Past</th>
+        <th>Past Participle</th>
+        <th>Arti</th>
+      </tr>
+    </thead>
+
+    <tbody id="verbTableBody">
+      <!-- DATA DIISI OLEH JS -->
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== SCRIPTS (URUTAN PENTING) ===== -->
+<script src="js/tensesData.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/detect.js"></script>
+
+<script src="js/irregularVerbs.js"></script>
+<script src="js/renderIrregular.js"></script>
+
+</body>
+</html>

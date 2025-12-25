@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TenseBuddy</title>
+    <meta name="description" content="A circular stack intro animation for images." />
+    <meta name="keywords" content="gsap, animation, intro, stack, images" />
+    <meta name="author" content="deadrabbbbit for Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+
+    <script>
+      document.documentElement.className = "js";
+    </script>
+
+  </head>
+  <body class="demo-1 loading">
+    <div data-debug>
+      <div></div>
+    </div>
+
+
+    <main>
+      
+      <header class="frame">
+        <h1 class="frame__title">TenseBuddy</h1>
+      
+        <a class="frame__present" href="present.html">Present Tense</a>
+        <a class="frame__past" href="past.html">Past Tense</a>
+        <a class="frame__future" href="future.html">Future Tense</a>
+        <a class="frame__pastFuture" href="past_future.html">Past Future Tense</a>
+
+      
+      
+        <nav class="frame__demos">
+      
+       
+        </nav>
+
+      </header>
+      
+      <div class="content">
+        <div class="scene">
+          <div class="group">
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/simplePresent.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/simplePast.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/simpleFuture.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/simPastFut.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/presentPerfectCon.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/presentPerfect.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/presentCon.png')"
+              ></div>
+            </div>
+            <div class="card">
+              <div
+                class="card__img"
+                style="background-image: url('tensesCard/pastPerfectCon.png')"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="headings">
+          <h1 class="headings__main Bebas Neue">TenseBuddy</h1> <br>
+          <h5 class="headings_subtitle nunito">Understand | Detect | Master</h5>
+
+          <div style="margin-top: 2rem;">
+          <a href="detect.html" onclick="saveLanguagePreference()" class="gloock-regular start-button">
+          🔍 DETECT NOW
+         </a>
+</div>
+        </div>
+      </div>
+
+
+<!-- Tombol Switch Halaman ke index2.html 
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <button onclick="window.location.href='index2.html'" 
+          style="background-color: #fff; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.15); font-size: 18px;">
+    🌙
+  </button>
+  -->
+        </main>
+
+
+
+    
+    <script src="js/gsap.min.js"></script>
+    <!-- Image preloader -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+
+  
+  </body>
+
+
+  
+  
+</html>

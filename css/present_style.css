@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;700;800;900;1000&display=swap");
+
+
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+  background-color: #daf3fd;
+
+}
+
+/* ===== FLOATING DETECT BUTTON ===== */
+.floating-detect-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #7f7cff, #5f5bff);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(95, 91, 255, 0.35);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.floating-detect-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(95, 91, 255, 0.45);
+  background: linear-gradient(135deg, #5f5bff, #4a46ff);
+}
+
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navbar {
+  background-color: #daf3fd;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* jarak antara brand dan links */
+  color: #000000;
+  font-family: "Nunito", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-brand {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #3c00ff;
+}
+
+/* Gaya khusus untuk link aktif */
+.hover-underline a.active {
+  color: #000000;
+  position: relative;
+}
+
+/* Aktifkan efek hover dua garis pada link aktif */
+.hover-underline a.active::after,
+.hover-underline a.active::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff0000, #5d00ff);
+  transform: scaleX(1);
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline a.active::after {
+  bottom: -5px;
+  left: 0;
+  transform-origin: right;
+}
+
+.hover-underline a.active::before {
+  top: -5px;
+  left: 0;
+  transform-origin: left;
+}
+
+.hover-underline {
+  font-size: 1rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff0000, #221ef0);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+.tense-explanation {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.tense-item { 
+  scroll-margin-top: 100px; /* sesuaikan dengan tinggi navbar */
+}
+
+.tense-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.card {
+  border-radius: 15px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.yellow { background: #fff9c4; }
+.green { background: #c8e6c9; }
+.blue { background: #bbdefb; }
+.purple { background: #e1bee7; }
+.pink { background: #f8bbd0; }
+.red { background: #ffcdd2; }
+.gray { background: #eeeeee; }
+
+.example-list { list-style: none; padding: 0; }
+.bubble {
+  background: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.wrong { color: #d32f2f; font-weight: bold; }
+.right { color: #388e3c; font-weight: bold; }
+.note { font-size: 0.85rem; color: #555; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+th, td {
+  border: 1px solid #aaa;
+  padding: 0.6rem;
+  text-align: left;
+}
+th { background: #ddd; }
+
+
+
+  .mini-quiz {
+    background: #f9f9ff;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+
+  .mini-quiz:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .mini-quiz h3 {
+    margin-bottom: 15px;
+    color: #444;
+  }
+
+  .mini-quiz label {
+    display: block;
+    background: #fff;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .mini-quiz input[type="radio"] {
+    display: none;
+  }
+
+  /* Efek saat option dipilih */
+  .mini-quiz input[type="radio"]:checked + label {
+    border-color: #4CAF50;
+    background: #eaffea;
+    font-weight: bold;
+  }
+
+  .mini-quiz button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+  }
+
+  .mini-quiz button:hover {
+    background: #45a049;
+  }
+
+  #quiz-feedback {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  #quiz-feedback.correct {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+
+  #quiz-feedback.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+
+  /* Accordion wrapper */
+.accordion {
+  margin-top: 1rem;
+}
+.accordion-item {
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.1);
+}
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: linear-gradient(90deg, #000000, #1e88e5);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+.accordion-header:hover {
+  background: linear-gradient(90deg, #46a5f3, #2196f3);
+}
+.accordion-body {
+  display: none;
+  background: #fafafa;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.accordion-item.active .accordion-body {
+  display: block;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
