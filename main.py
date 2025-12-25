@@ -9,18 +9,6 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-@app.get("/")
-def root():
-    return {
-        "status": "ok",
-        "message": "TensesDetect API is running 🚀"
-    }
-
-@app.get("/app", response_class=HTMLResponse)
-def app_page():
-    with open("index.html", "r", encoding="utf-8") as f:
-        return f.read()
-
 
 app.add_middleware(
     CORSMiddleware,
