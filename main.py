@@ -5,11 +5,13 @@ import re
 import requests
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles  # 🔹 TAMBAHAN (WAJIB)
 
 
 app = FastAPI()
 
 
+# ================= CORS (TIDAK DIUBAH) =================
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
@@ -18,8 +20,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+# ================= STATIC FILES (TAMBAHAN) =================
+# supaya CSS, JS, IMG bisa kebaca di Railway
+app.mount("/css", StaticFiles(directory="css"), name="css")
+app.mount("/js", StaticFiles(directory="js"), name="js")
+app.mount("/img", StaticFiles(directory="img"), name="img")
+
+
+# ================= MODEL (TIDAK DIUBAH) =================
 class SentenceInput(BaseModel):
     sentence: str
+
+
+# ================= ROOT PAGE (TAMBAHAN) =================
+# supaya langsung tampil index.html
+@app.get("/", response_class=HTMLResponse)
+def home():
+    with open("index.html", "r", encoding="utf-8") as f:
+        return f.read()
+
 
 # Ganti dengan API key kamu dari textgears.com
 TEXTGEARS_API_KEY = "PxmT6jMbvybTNE9M"
