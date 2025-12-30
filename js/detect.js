@@ -29,6 +29,8 @@ async function detectTense() {
       body: JSON.stringify({ sentence: input })
     });
 
+    
+
     const data = await response.json();
     console.log(data);
 

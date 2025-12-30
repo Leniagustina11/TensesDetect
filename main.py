@@ -5,50 +5,23 @@ import re
 import requests
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+import os
+
+
 
 app = FastAPI()
 
-# ================= CORS (TIDAK DIUBAH) =================
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ================= MODEL (TIDAK DIUBAH) =================
 class SentenceInput(BaseModel):
     sentence: str
-
-
-# ================= API ROUTE (CONTOH / PUNYA KAMU TETAP DI SINI) =================
-# ⚠️ SEMUA API HARUS DI ATAS STATIC MOUNT
-@app.post("/detect-tense")
-def detect_tense(data: SentenceInput):
-    sentence = data.sentence.lower()
-
-    if re.search(r"\bwill\b", sentence):
-        return {"tense": "Future Tense"}
-    elif re.search(r"\bwas\b|\bwere\b|\bdid\b", sentence):
-        return {"tense": "Past Tense"}
-    elif re.search(r"\bis\b|\bam\b|\bare\b", sentence):
-        return {"tense": "Present Tense"}
-    else:
-        return {"tense": "Unknown"}
-
-
-# ================= STATIC FILES =================
-# CSS, JS, IMG (tetap seperti punyamu)
-app.mount("/css", StaticFiles(directory="css"), name="css")
-app.mount("/js", StaticFiles(directory="js"), name="js")
-app.mount("/img", StaticFiles(directory="img"), name="img")
-
-# ================= HTML STATIC (INI KUNCI UTAMA) =================
-# seluruh file .html di root bisa diakses langsung
-# contoh: /present.html, /past.html, dll
-app.mount("/", StaticFiles(directory=".", html=True), name="html")
-
 
 # Ganti dengan API key kamu dari textgears.com
 TEXTGEARS_API_KEY = "PxmT6jMbvybTNE9M"
@@ -382,3 +355,10 @@ def detect(sentence_input: SentenceInput):
     # 🔹 Gabungkan hasil
     main_tense["related"] = related
     return main_tense
+
+
+app.mount("/css", StaticFiles(directory="css"), name="css")
+app.mount("/js", StaticFiles(directory="js"), name="js")
+app.mount("/img", StaticFiles(directory="img"), name="img")
+app.mount("/", StaticFiles(directory=".", html=True), name="html")
+
