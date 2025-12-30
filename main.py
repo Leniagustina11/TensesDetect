@@ -4,41 +4,50 @@ from typing import Optional
 import re
 import requests
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles  # 🔹 TAMBAHAN (WAJIB)
-
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
-
 
 # ================= CORS (TIDAK DIUBAH) =================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-# ================= STATIC FILES (TAMBAHAN) =================
-# supaya CSS, JS, IMG bisa kebaca di Railway
-app.mount("/css", StaticFiles(directory="css"), name="css")
-app.mount("/js", StaticFiles(directory="js"), name="js")
-app.mount("/img", StaticFiles(directory="img"), name="img")
-
 
 # ================= MODEL (TIDAK DIUBAH) =================
 class SentenceInput(BaseModel):
     sentence: str
 
 
-# ================= ROOT PAGE (TAMBAHAN) =================
-# supaya langsung tampil index.html
-@app.get("/", response_class=HTMLResponse)
-def home():
-    with open("index.html", "r", encoding="utf-8") as f:
-        return f.read()
+# ================= API ROUTE (CONTOH / PUNYA KAMU TETAP DI SINI) =================
+# ⚠️ SEMUA API HARUS DI ATAS STATIC MOUNT
+@app.post("/detect-tense")
+def detect_tense(data: SentenceInput):
+    sentence = data.sentence.lower()
+
+    if re.search(r"\bwill\b", sentence):
+        return {"tense": "Future Tense"}
+    elif re.search(r"\bwas\b|\bwere\b|\bdid\b", sentence):
+        return {"tense": "Past Tense"}
+    elif re.search(r"\bis\b|\bam\b|\bare\b", sentence):
+        return {"tense": "Present Tense"}
+    else:
+        return {"tense": "Unknown"}
+
+
+# ================= STATIC FILES =================
+# CSS, JS, IMG (tetap seperti punyamu)
+app.mount("/css", StaticFiles(directory="css"), name="css")
+app.mount("/js", StaticFiles(directory="js"), name="js")
+app.mount("/img", StaticFiles(directory="img"), name="img")
+
+# ================= HTML STATIC (INI KUNCI UTAMA) =================
+# seluruh file .html di root bisa diakses langsung
+# contoh: /present.html, /past.html, dll
+app.mount("/", StaticFiles(directory=".", html=True), name="html")
 
 
 # Ganti dengan API key kamu dari textgears.com
