@@ -324,110 +324,110 @@ const tenseInfo = {
   }
 },
 
-"Past Future": {
-  positive: {
-    formula: "Subject + would + Verb1",
-    examples: [
-      "He said he would call me tomorrow.",
+"Simple Past Future": {
+  "positive": {
+    "formula": "Subject + would + Verb1",
+    "examples": [
+      "He said he would call me the next day.",
       "I knew she would come to the party.",
       "They promised they would help us."
     ]
   },
-  negative: {
-    formula: "Subject + would not (wouldn’t) + Verb1",
-    examples: [
-      "He said he would not call me tomorrow.",
+  "negative": {
+    "formula": "Subject + would not (wouldn’t) + Verb1",
+    "examples": [
+      "He said he would not call me the next day.",
       "I knew she would not come to the party.",
       "They promised they wouldn’t help us."
     ]
   },
-  interrogative: {
-    formula: "Would + Subject + Verb1?",
-    examples: [
-      "Would he call you tomorrow?",
-      "Would she come to the party?",
-      "Would they help us?"
+  "interrogative": {
+    "formula": "Would + Subject + Verb1?",
+    "examples": [
+      "He asked if he would call me the next day.",
+      "She wondered whether she would come to the party.",
+      "They asked if they would help us."
+    ]
+  }
+},
+
+"Past Future Continuous": {
+  "positive": {
+    "formula": "Subject + would be + Verb-ing",
+    "examples": [
+      "He said he would be working all day.",
+      "I knew she would be studying that night.",
+      "They said they would be waiting for us."
+    ]
+  },
+  "negative": {
+    "formula": "Subject + would not be + Verb-ing",
+    "examples": [
+      "He said he would not be working all day.",
+      "I knew she would not be studying that night.",
+      "They said they would not be waiting for us."
+    ]
+  },
+  "interrogative": {
+    "formula": "Would + Subject + be + Verb-ing?",
+    "examples": [
+      "He asked if he would be working all day.",
+      "She wondered whether she would be studying that night.",
+      "They asked if they would be waiting for us."
     ]
   }
 },
 
 "Past Future Perfect": {
-  positive: {
-    formula: "Subject + would have + Verb3",
-    examples: [
-      "He said he would have finished the task by yesterday.",
+  "positive": {
+    "formula": "Subject + would have + Verb3",
+    "examples": [
+      "He said he would have finished the task by then.",
       "I knew she would have graduated by 2020.",
       "They promised they would have arrived on time."
     ]
   },
-  negative: {
-    formula: "Subject + would not have + Verb3",
-    examples: [
-      "He said he would not have finished the task by yesterday.",
+  "negative": {
+    "formula": "Subject + would not have + Verb3",
+    "examples": [
+      "He said he would not have finished the task by then.",
       "I knew she would not have graduated by 2020.",
       "They promised they would not have arrived on time."
     ]
   },
-  interrogative: {
-    formula: "Would + Subject + have + Verb3?",
-    examples: [
-      "Would he have finished the task by yesterday?",
-      "Would she have graduated by 2020?",
-      "Would they have arrived on time?"
+  "interrogative": {
+    "formula": "Would + Subject + have + Verb3?",
+    "examples": [
+      "He asked if he would have finished the task by then.",
+      "She wondered whether she would have graduated by 2020.",
+      "They asked if they would have arrived on time."
     ]
   }
 },
 
 "Past Future Perfect Continuous": {
-  positive: {
-    formula: "Subject + would have been + Verb-ing",
-    examples: [
-      "He said he would have been working for 5 hours by then.",
+  "positive": {
+    "formula": "Subject + would have been + Verb-ing",
+    "examples": [
+      "He said he would have been working for five hours by then.",
       "I knew she would have been studying all night.",
       "They said they would have been traveling for a week."
     ]
   },
-  negative: {
-    formula: "Subject + would not have been + Verb-ing",
-    examples: [
-      "He said he would not have been working for 5 hours by then.",
+  "negative": {
+    "formula": "Subject + would not have been + Verb-ing",
+    "examples": [
+      "He said he would not have been working for five hours by then.",
       "I knew she would not have been studying all night.",
       "They said they would not have been traveling for a week."
     ]
   },
-  interrogative: {
-    formula: "Would + Subject + have been + Verb-ing?",
-    examples: [
-      "Would he have been working for 5 hours by then?",
-      "Would she have been studying all night?",
-      "Would they have been traveling for a week?"
-    ]
-  }
-},
-
-"Simple Past Future": {
-  positive: {
-    formula: "Subject + should + Verb1",
-    examples: [
-      "He said I should go to school early.",
-      "She told me I should take some rest.",
-      "They said we should join them."
-    ]
-  },
-  negative: {
-    formula: "Subject + should not + Verb1",
-    examples: [
-      "He said I should not go to school early.",
-      "She told me I should not take some rest.",
-      "They said we should not join them."
-    ]
-  },
-  interrogative: {
-    formula: "Should + Subject + Verb1?",
-    examples: [
-      "Should I go to school early?",
-      "Should I take some rest?",
-      "Should we join them?"
+  "interrogative": {
+    "formula": "Would + Subject + have been + Verb-ing?",
+    "examples": [
+      "He asked if he would have been working for five hours by then.",
+      "She wondered whether she would have been studying all night.",
+      "They asked if they would have been traveling for a week."
     ]
   }
 }

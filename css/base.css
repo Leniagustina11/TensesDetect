@@ -296,3 +296,67 @@ a:focus-visible {
     width: 6em;
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  :root {
+    --page-padding: 1rem;
+  }
+
+  body {
+    font-size: 14px;
+    background-size: 100px, 100% 100vh;
+  }
+
+  .frame {
+    font-size: 16px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "present"
+      "past"
+      "future"
+      "pastFuture"
+      "demos"
+      "tags";
+    pointer-events: auto;
+  }
+
+  .frame__demos {
+    flex-wrap: wrap;
+  }
+
+  .content {
+    padding-bottom: 6rem;
+  }
+
+  .scene {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .headings__main {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  .headings_subtitle {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .start-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card__img {
+    width: 4em;
+  }
+}
