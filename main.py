@@ -23,7 +23,7 @@ app.add_middleware(
 class SentenceInput(BaseModel):
     sentence: str
 
-# Ganti dengan API key kamu dari textgears.com
+# API key dari textgears.com
 TEXTGEARS_API_KEY = "PxmT6jMbvybTNE9M"
 
 # --------------------- GRAMMAR CHECK FUNCTION ---------------------
@@ -168,7 +168,7 @@ def detect_tense(sentence: str) -> dict:
 
 
     elif (
-        # core pattern
+        # core patterjn
         re.search(r"\b(has|have)\b", s)
         and re.search(r"\b\w+(ed|en)\b", s)
 
